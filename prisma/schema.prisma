@@ -30,3 +30,18 @@ model Todo {
 // npx prisma migrate dev --name UserAndTodoAdded
 
 // Above command generates 'migrations' folder which containes your raw sql queries
+
+// Client lets you convert queries (INSERT INTO users VALUES ...) into readable functions User.create({email: "harkirat@gmail.com"})
+
+// ? Generate Client
+// npx prisma generate
+
+// Start using Prisma Client in Node.js (See: https://pris.ly/d/client)        
+// ```
+// import { PrismaClient } from '@prisma/client'
+// const prisma = new PrismaClient()
+// ```
+
+// Whenever you change schema make sure to push the db
+// ? Push command
+// npx prisma db push
