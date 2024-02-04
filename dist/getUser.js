@@ -11,18 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
-function insertUser(email, password, firstName, lastName) {
+function getUser(email) {
     return __awaiter(this, void 0, void 0, function* () {
-        const user = yield prisma.user.create({
-            data: {
+        const user = yield prisma.user.findUnique({
+            where: {
                 email,
-                firstName,
-                lastName,
-                password,
             },
         });
         console.log(user);
     });
 }
-insertUser('admin1@mail.com', '123456', 'harkirat', 'singh');
-// Erroneous entry will fail the create but the id will still be incremented
+getUser('admin1@mail.com');

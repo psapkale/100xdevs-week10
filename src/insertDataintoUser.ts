@@ -21,3 +21,5 @@ async function insertUser(
 }
 
 insertUser('admin1@mail.com', '123456', 'harkirat', 'singh');
+
+// Erroneous entry will fail the create but the id will still be incremented
